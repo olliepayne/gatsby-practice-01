@@ -2,19 +2,27 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "gatsby-practice-01",
+    copyright: "Copyright 2021"
   },
   plugins: [
     "gatsby-plugin-theme-ui",
-    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: "./src/images/",
+        path: `${__dirname}/src`,
+        name: `src`,
       },
-      __key: "images",
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Open Sans\:400,700`
+        ],
+        display: 'swap'
+      }
     },
   ],
 };
