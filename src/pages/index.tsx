@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Heading } from 'theme-ui'
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
@@ -12,13 +12,15 @@ const IndexPage = ({ data: { site: { siteMetadata: { title, description, copyrig
           textAlign: 'center'
         }}
       >
-        <h1
+        <Heading
           sx={{
             color: 'themePink'
           }}
+          as="h1"
+          variant="styles.h1"
         >
-          This is the home page, {copyright}
-        </h1>
+          This is the homepage, {copyright}
+        </Heading>
       </main>
     </Layout>
   )
